@@ -1,0 +1,11 @@
+[project]
+entrypoint = "bin/main"
+requires = ["go"]
+
+[dev]
+build = ["bash", "-c", "GOPROXY=https://goproxy.cn,direct go build -o bin/main ./cmd/api"]
+run = ["bash", "-c", "./bin/main"]
+
+[deploy]
+build = ["bash", "-c", "GOPROXY=https://goproxy.cn,direct go build -o bin/main ./cmd/api"]
+run = ["bash", "-c", "./bin/main"]
